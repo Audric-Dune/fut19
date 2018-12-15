@@ -47,3 +47,4 @@ tmtagsHistory
 .mypy_cache/3.6/_importlib_modulespec.data.json
 *.db
 fut.db
+.idea/workspace.xml
