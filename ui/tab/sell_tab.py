@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QLineEdit, QProgressBar
+from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QProgressBar
 
 from model.my_player_store import my_player_store
 from ui.table import Table
@@ -9,6 +9,7 @@ from ui.player_sell_ui import PlayerSellUi
 from utils.stylesheet import search_bar_stylesheet
 from ui.tab.tab_model import TabModel
 from utils.constant import c
+from utils.my_QlineEdit import my_QlineEdit
 
 
 class SellTab(TabModel):
@@ -22,7 +23,7 @@ class SellTab(TabModel):
         self.table.ON_SELL_PLAYER.connect(self.update_table)
         self.table.ON_SOLDING_PLAYER.connect(self.update_table)
         self.table.ON_CHANGED.connect(self.update_table)
-        self.search_bar = QLineEdit()
+        self.search_bar = my_QlineEdit()
         self.progress_bar = QProgressBar()
         self.update_table()
         self.master_vbox = QVBoxLayout()
@@ -53,7 +54,7 @@ class SellTab(TabModel):
 
     def get_valid_players(self):
         self.valid_players = []
-        for player in my_player_store.my_players:
+        for player in reversed(my_player_store.my_players):
             if self.search_bar.text():
                 if self.search_bar.text().upper() in player.nom.upper():
                     self.valid_players.append(player)

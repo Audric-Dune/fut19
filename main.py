@@ -1,7 +1,5 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-# TEST
-
 import sys
 
 from PyQt5.QtWidgets import QApplication

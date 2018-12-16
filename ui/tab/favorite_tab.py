@@ -51,6 +51,6 @@ class FavoriteTab(TabModel):
             if player.favorite:
                 self.valid_players.append(player)
         if self.search_bar.text():
-            for player in self.favorite_players:
+            for player in reversed(self.favorite_players):
                 if self.search_bar.text().upper() in player.nom.upper():
                     self.valid_players.append(player)

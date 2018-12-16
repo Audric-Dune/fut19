@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QDialog, QPushButton, QLineEdit, QVBoxLayout, QHBoxLayout, QLabel, QComboBox,\
+from PyQt5.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QComboBox,\
     QStyledItemDelegate
 from PyQt5.QtGui import QIcon, QPixmap, QIntValidator
 from PyQt5.QtCore import Qt
@@ -13,6 +13,7 @@ from utils.stylesheet import QPushButton_red_stylesheet, \
     label_subtitle_stylesheet,\
     dropdown_stylesheet
 from utils.constant import c
+from utils.my_QlineEdit import my_QlineEdit
 
 
 class EditMyPlayerDialog(QDialog):
@@ -22,8 +23,8 @@ class EditMyPlayerDialog(QDialog):
         self.setWindowTitle("Modification")
         self.setWindowIcon(QIcon("img/edit_icon.png"))
         self.player = player
-        self.buy_edit = QLineEdit()
-        self.solding_edit = QLineEdit()
+        self.buy_edit = my_QlineEdit()
+        self.solding_edit = my_QlineEdit()
         self.dropdown_status = QComboBox()
         self.bt_save = QPushButton("Modifier")
         self.init_dialog()

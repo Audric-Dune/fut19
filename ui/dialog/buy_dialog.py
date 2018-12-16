@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QDialog, QPushButton, QLineEdit, QVBoxLayout, QHBoxLayout, QLabel
+from PyQt5.QtWidgets import QDialog, QPushButton, QVBoxLayout, QHBoxLayout, QLabel
 from PyQt5.QtGui import QIcon, QPixmap, QIntValidator
 from PyQt5.QtCore import Qt
 
@@ -10,6 +10,7 @@ from utils.stylesheet import QPushButton_red_stylesheet, \
     QPushButton_stylesheet,\
     search_bar_stylesheet
 from utils.constant import c
+from utils.my_QlineEdit import my_QlineEdit
 
 
 class BuyDialog(QDialog):
@@ -19,7 +20,7 @@ class BuyDialog(QDialog):
         self.setWindowTitle("Achat en cours")
         self.setWindowIcon(QIcon("img/coins_icon.png"))
         self.player = player
-        self.buy_edit = QLineEdit()
+        self.buy_edit = my_QlineEdit()
         self.bt_save = QPushButton("Acheter")
         self.bt_save.setDisabled(True)
         self.init_dialog()
